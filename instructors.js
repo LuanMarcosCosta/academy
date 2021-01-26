@@ -13,15 +13,30 @@ exports.post = function(req, res) {
             return res.send("Please, fill a fields")
     }
 
+
+    // Desestruturando dados
+    let { avatar_url, birth, name, services, gender } = req.body
+
     // Transformando a data no estilo 'Date.now'
-    req.body.birth = Date.parse(req.body.birth)
+    birth = Date.parse(birth)
 
     // Cria uma data de agopra, para depois usarmos em comparação a data de quando Instrutor entrou na academia
-    req.body.create_at = Date.now()
+    const created_at = Date.now()
+
+    // Para Criar uma chave Primária 
+    const id = Number(data.instructors.length + 1)
 
 
     //começa vazio []
-    data.instructors.push(req.body) // Após passar aqui vai ter valores [{...}], [{...}]
+    data.instructors.push({
+            id,
+            avatar_url,
+            name,
+            birth,
+            gender,
+            services,
+            created_at
+        }) // Após passar aqui vai ter valores [{...}], [{...}]
 
     // Depois de validar o dado é hora de escrever ele dentro do data.json que ele cria.
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
