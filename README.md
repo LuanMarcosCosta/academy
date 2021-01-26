@@ -8,10 +8,10 @@ Para uso do projeto, basta instalar os seguintes programas:
    
  ## Para instalar e rodar o projeto:
  
-   1- Selecione uma pasta, abra o Git Bash e rode 'git clone https://github.com/LuanMarcosCosta/academy.git'
+   1- Selecione uma pasta (recomendo colocar no disco local (c:)), abra o Git Bash e rode 'git clone https://github.com/LuanMarcosCosta/academy.git'
    
    2- Abra o projeto com o VS Code e rode o comando 'npm install'
 
-## Para Rodar o projeto: 
+ ## Para Rodar o projeto: 
 
   1- 'npm start'
